@@ -11,6 +11,7 @@ public class MultipleChoiceQuestion extends Question {
 
     public MultipleChoiceQuestion(int points, int chapter, String prompt, String[] choices, int answer) {
         super(points, chapter, prompt);
+        this.choices = choices;
         this.answer = answer;
     }
 

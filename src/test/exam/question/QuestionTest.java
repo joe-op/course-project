@@ -7,31 +7,6 @@ import junit.framework.TestCase;
  */
 public class QuestionTest extends TestCase {
 
-    public void testToString() throws Exception {
+    // Nothing to test
 
-    }
-
-    public void testGetPoints() throws Exception {
-
-    }
-
-    public void testSetPoints() throws Exception {
-
-    }
-
-    public void testGetChapter() throws Exception {
-
-    }
-
-    public void testSetChapter() throws Exception {
-
-    }
-
-    public void testGetPrompt() throws Exception {
-
-    }
-
-    public void testSetPrompt() throws Exception {
-
-    }
 }

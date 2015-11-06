@@ -7,15 +7,6 @@ import junit.framework.TestCase;
  */
 public class LongAnswerQuestionTest extends TestCase {
 
-    public void testGetAnswer() throws Exception {
+    // Nothing to test
 
-    }
-
-    public void testSetAnswer() throws Exception {
-
-    }
-
-    public void testToString() throws Exception {
-
-    }
 }

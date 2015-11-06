@@ -7,19 +7,6 @@ import junit.framework.TestCase;
  */
 public class MultipleChoiceQuestionTest extends TestCase {
 
-    public void testGetChoices() throws Exception {
+    // Nothing to test
 
-    }
-
-    public void testSetChoices() throws Exception {
-
-    }
-
-    public void testGetAnswer() throws Exception {
-
-    }
-
-    public void testSetAnswer() throws Exception {
-
-    }
 }

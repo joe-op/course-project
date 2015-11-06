@@ -7,11 +7,6 @@ import junit.framework.TestCase;
  */
 public class ShortAnswerQuestionTest extends TestCase {
 
-    public void testGetAnswers() throws Exception {
+    // Nothing to test
 
-    }
-
-    public void testSetAnswers() throws Exception {
-
-    }
 }

@@ -9,30 +9,23 @@ import java.util.List;
 /**
  * Question Pool Class
  */
+
+// TODO implement Comparable in questions and use it here
+
 public class QuestionPool {
 
     // Each chapter has its own list
-    List<ArrayList<Question>> questionList;
+    List<Question> questionList;
 
     // default constructor
-    public QuestionPool() { questionList = new ArrayList<ArrayList<Question>>(); }
+    public QuestionPool() { questionList = new ArrayList<Question>(); }
 
     // Getter
-    public List<ArrayList<Question>> getQuestionList() { return questionList; }
+    public List<Question> getQuestionList() { return questionList; }
 
     // Add question
-    // TODO is there a better way to push?
     public void addQuestion(Question question) {
-        int chapter = question.getChapter();
-        ArrayList<Question> chapterList;
-        try {
-            chapterList = questionList.get(chapter);
-        } catch(IndexOutOfBoundsException e) {
-            questionList.add(chapter, new ArrayList<Question>());
-            chapterList = questionList.get(chapter);
-        }
-        // add at index 'size()' to mimic push method
-        chapterList.add(chapterList.size(), question);
+        questionList.add(question);
     }
 
     // Get questions from a range of chapters.
@@ -42,12 +35,7 @@ public class QuestionPool {
     private List<Question> chapterRange(int min, int max) throws IllegalArgumentException {
         if(min > 0 && min <= max) {
             List<Question> selectedChapterQuestions = new ArrayList<Question>();
-            for(int i=min; i<=max; i++) {
-                // catch exception if a chapter does not exist
-                try {
-                    selectedChapterQuestions.addAll(questionList.get(i));
-                } catch(IndexOutOfBoundsException e) {}
-            }
+            // TODO
             return selectedChapterQuestions;
         } else {
             throw new IllegalArgumentException("Invalid range");

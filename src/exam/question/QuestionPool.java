@@ -7,7 +7,6 @@ import java.util.*;
  * Question Pool Class
  */
 
-// TODO implement Comparable in questions and use it here
 
 public class QuestionPool {
 
@@ -79,7 +78,7 @@ public class QuestionPool {
             }
 
         }
-        return -1;
+        return i;
     }
 
 }

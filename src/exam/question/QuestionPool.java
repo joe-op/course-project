@@ -46,6 +46,12 @@ public class QuestionPool {
         }
     }
 
+    public List<Question> shuffleRange(int min, int max) throws IllegalArgumentException {
+        List<Question> shuffledQuestions = chapterRange(min, max);
+        Collections.shuffle(shuffledQuestions);
+        return shuffledQuestions;
+    }
+
     // find first item matching chapter
     private int firstChapterIndex(int chapter) {
         int i;

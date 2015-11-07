@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="972ab7f2-baed-48fd-b22f-74219358aa97" name="Default" comment="Removed unnecessary test methods">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="DELETED" beforePath="C:\Users\Joe\IdeaProjects\Course Project\out\production\Course Project\exam\MultipleChoiceQuestion.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Joe\IdeaProjects\Course Project\out\production\Course Project\exam\Question.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Joe\IdeaProjects\Course Project\out\production\Course Project\exam\TestQuestion.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Course Project.iml" afterPath="$PROJECT_DIR$/Course Project.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course Project/exam/question/QuestionPool.class" afterPath="$PROJECT_DIR$/out/production/Course Project/exam/question/QuestionPool.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Course Project/exam/question/QuestionPoolTest.class" afterPath="$PROJECT_DIR$/out/test/Course Project/exam/question/QuestionPoolTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exam/question/Question.java" afterPath="$PROJECT_DIR$/src/exam/question/Question.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exam/question/QuestionPool.java" afterPath="$PROJECT_DIR$/src/exam/question/QuestionPool.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/exam/question/QuestionPoolTest.java" afterPath="$PROJECT_DIR$/src/test/exam/question/QuestionPoolTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -39,47 +36,42 @@
         <entry file="file://$PROJECT_DIR$/src/exam/question/Question.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <element signature="e#488#489#0" expanded="false" />
-                <element signature="e#565#566#0" expanded="false" />
-                <element signature="e#621#622#0" expanded="false" />
-                <element signature="e#650#651#0" expanded="false" />
-                <element signature="e#691#692#0" expanded="false" />
-                <element signature="e#727#728#0" expanded="false" />
-                <element signature="e#758#759#0" expanded="false" />
-                <element signature="e#788#789#0" expanded="false" />
-                <element signature="e#831#832#0" expanded="false" />
-                <element signature="e#869#870#0" expanded="false" />
-                <element signature="e#902#903#0" expanded="false" />
-                <element signature="e#931#932#0" expanded="false" />
-                <element signature="e#975#976#0" expanded="false" />
-                <element signature="e#1011#1012#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuestionPoolTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/exam/question/QuestionPoolTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+              <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestionPool.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/exam/question/QuestionPool.java">
+      <file leaf-file-name="QuestionPoolTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/exam/question/QuestionPoolTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33035713">
-              <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.5777027">
+              <caret line="63" column="57" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
-                <element signature="e#651#652#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuestionPool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/exam/question/QuestionPool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MultipleChoiceQuestion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/exam/question/MultipleChoiceQuestion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,15 +120,15 @@
         <option value="$PROJECT_DIR$/src/exam/LongAnswerQuestion.java" />
         <option value="$PROJECT_DIR$/src/exam/question/LongAnswerQuestion.java" />
         <option value="$PROJECT_DIR$/src/exam/question/ShortAnswerQuestion.java" />
-        <option value="$PROJECT_DIR$/src/exam/question/Question.java" />
         <option value="$PROJECT_DIR$/src/exam/question/MultipleChoiceQuestion.java" />
         <option value="$PROJECT_DIR$/src/exam/ui/TextUI.java" />
         <option value="$PROJECT_DIR$/src/test/exam/question/QuestionTest.java" />
         <option value="$PROJECT_DIR$/src/test/exam/question/MultipleChoiceQuestionTest.java" />
         <option value="$PROJECT_DIR$/src/test/exam/question/ShortAnswerQuestionTest.java" />
         <option value="$PROJECT_DIR$/src/test/exam/question/LongAnswerQuestionTest.java" />
-        <option value="$PROJECT_DIR$/src/test/exam/question/QuestionPoolTest.java" />
+        <option value="$PROJECT_DIR$/src/exam/question/Question.java" />
         <option value="$PROJECT_DIR$/src/exam/question/QuestionPool.java" />
+        <option value="$PROJECT_DIR$/src/test/exam/question/QuestionPoolTest.java" />
       </list>
     </option>
   </component>
@@ -267,6 +259,8 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -519,7 +513,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14605543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -566,22 +560,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#650#651#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#788#789#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#902#903#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#975#976#0" expanded="false" />
-            <element signature="e#1011#1012#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -615,8 +594,6 @@
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -654,22 +631,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#650#651#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#788#789#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#902#903#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#975#976#0" expanded="false" />
-            <element signature="e#1011#1012#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -703,8 +665,6 @@
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -713,7 +673,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -750,22 +712,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
-          <folding>
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#650#651#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#788#789#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#902#903#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#975#976#0" expanded="false" />
-            <element signature="e#1011#1012#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -790,8 +737,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -820,22 +765,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#650#651#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#788#789#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#902#903#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#975#976#0" expanded="false" />
-            <element signature="e#1011#1012#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -871,22 +801,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#650#651#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#788#789#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#902#903#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#975#976#0" expanded="false" />
-            <element signature="e#1011#1012#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -932,29 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/exam/question/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#650#651#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#788#789#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#902#903#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#975#976#0" expanded="false" />
-            <element signature="e#1011#1012#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/exam/question/ShortAnswerQuestion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -965,14 +857,6 @@
             <element signature="e#456#457#0" expanded="false" />
             <element signature="e#494#495#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/exam/question/MultipleChoiceQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,22 +892,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/exam/question/QuestionPoolTest.java">
+    <entry file="file://$PROJECT_DIR$/src/exam/question/Question.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exam/question/MultipleChoiceQuestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/exam/question/QuestionPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33035713">
-          <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/exam/question/QuestionPoolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5777027">
+          <caret line="63" column="57" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

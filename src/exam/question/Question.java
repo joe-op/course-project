@@ -5,7 +5,7 @@ package exam.question;
  * Has integers points & chapter and String prompt
  * Provides getters, setters, and a default toString() method
  */
-public abstract class Question {
+public abstract class Question implements Comparable<Question> {
 
     private int points;
     private int chapter;
@@ -53,5 +53,13 @@ public abstract class Question {
     }
 
 
-
+    @Override
+    public int compareTo(Question o) {
+        if (this.chapter < o.chapter)
+            return -1;
+        else if(this.chapter == o.chapter)
+            return 0;
+        else
+            return 1;
+    }
 }

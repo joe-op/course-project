@@ -22,9 +22,9 @@ public class QuestionPoolTest extends TestCase {
     @Before
     public void setUp() {
         multipleChoice1 = new MultipleChoiceQuestion(3, 2, "Which is a fruit?",
-                new String[] {"Car", "Boat", "Apple", "Kid"}, 2);
+                new String[] {"Car", "Boat", "Apple", "Kid"}, 'c');
         multipleChoice2 = new MultipleChoiceQuestion(2, 4, "Which is not a fruit?",
-                new String[] {"Car", "Peach", "Watermelon", "Apple"}, 0);
+                new String[] {"Car", "Peach", "Watermelon", "Apple"}, 'a');
         longAnswer1 = new LongAnswerQuestion(10, 2, "Describe fruit", "Fruit is something you eat");
         longAnswer2 = new LongAnswerQuestion(8, 3, "Describe vegetable", "Vegetable is something you should eat");
         shortAnswer1 = new ShortAnswerQuestion(2, 1, "Name a red fruit",

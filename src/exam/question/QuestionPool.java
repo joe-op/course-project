@@ -30,12 +30,9 @@ public class QuestionPool {
     public List<Question> chapterRange(int min, int max) throws IllegalArgumentException {
         if(min > 0 && min <= max) {
             List<Question> selectedChapterQuestions = new ArrayList<Question>();
-            // get first and last index of matching elements
-            //TODO find a better way to do this
-            int firstIndex = firstChapterIndex(min);
-            int lastIndex = lastChapterIndex(max);
-            for(int i=firstIndex; i<=lastIndex; i++) {
-                selectedChapterQuestions.add(i-firstIndex, questionList.get(i));
+            for(Question q : questionList) {
+                if (q.getChapter() >= min && q.getChapter() <= max)
+                    selectedChapterQuestions.add(q);
             }
             return selectedChapterQuestions;
         } else {

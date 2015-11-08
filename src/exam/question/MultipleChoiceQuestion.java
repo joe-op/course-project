@@ -2,7 +2,7 @@ package exam.question;
 
 /**
  * MultipleChoiceQuestion
- * Has an array of choices and an integer indicating the index of the correct answer.
+ * Has an array of choices and a char indicating the index of the correct answer.
  */
 public class MultipleChoiceQuestion extends Question {
 

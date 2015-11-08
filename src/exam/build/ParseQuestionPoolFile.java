@@ -46,7 +46,7 @@ public class ParseQuestionPoolFile {
     public static boolean validateFile(String filename) throws FileNotFoundException {
         Scanner inFile = new Scanner(new FileReader(filename));
         if(inFile.hasNextLine()) {
-            String questionType = inFile.nextLine().split("@")[0];
+            String questionType = ParseQuestions.getType(inFile.nextLine());
             return (questionType.equals("multiple") || questionType.equals("short") || questionType.equals("long"));
         } else {
             return false;

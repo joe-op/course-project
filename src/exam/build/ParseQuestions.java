@@ -11,7 +11,11 @@ public class ParseQuestions {
 
     // Get question type from string
     public static String getType(String str) {
-        return str.substring(0, str.indexOf('@'));
+        if(str.indexOf('@') != -1) {
+            return str.substring(0, str.indexOf('@'));
+        } else {
+            return "";
+        }
     }
 
     // Split string with values separated by "@"

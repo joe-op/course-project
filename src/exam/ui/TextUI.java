@@ -54,15 +54,16 @@ public class TextUI {
             }
         } while(!validExam);
 
-        // Print exam
+        // Print exam & key
         PrintWriter outExam = new PrintWriter("exam.txt");
-        for(Question el : examQuestions)
-            outExam.println(el);
-        outExam.close();
-        // Print key
         PrintWriter outKey = new PrintWriter("key.txt");
-        for(Question el : examQuestions)
-            outKey.println(el.getAnswer());
+        int questionNo = 1;
+        for(Question el : examQuestions) {
+            outExam.print(String.format("%2d. %s%n", questionNo, el));
+            outKey.print(String.format("%2d. %s%n", questionNo, el.getAnswer()));
+            questionNo++;
+        }
+        outExam.close();
         outKey.close();
         // Display total number of points
         int points = 0;

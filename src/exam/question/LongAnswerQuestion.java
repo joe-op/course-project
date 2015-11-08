@@ -21,8 +21,8 @@ public class LongAnswerQuestion extends Question {
         this.answer = answer;
     }
 
-    // override toString() method to add more spaces
+    @Override
     public String toString() {
-        return super.toString() + "\n\n\n\n\n\n\n\n\n";
+        return super.toString() + "\n\n\n\n\n\n\n\n\n\n";
     }
 }

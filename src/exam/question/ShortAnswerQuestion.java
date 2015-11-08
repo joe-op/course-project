@@ -19,4 +19,9 @@ public class ShortAnswerQuestion extends Question {
     public void setAnswers(String[] answers) {
         this.answers = answers;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n\n\n";
+    }
 }

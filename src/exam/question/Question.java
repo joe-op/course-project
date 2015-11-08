@@ -4,7 +4,9 @@ package exam.question;
  * Question - 10/28/15
  * Has integers points & chapter and String prompt
  * Provides getters, setters, and a default toString() method
+ * Provides an array
  */
+
 public abstract class Question implements Comparable<Question> {
 
     private int points;
@@ -18,7 +20,7 @@ public abstract class Question implements Comparable<Question> {
         this.prompt = prompt;
     }
     public String toString() {
-        return String.format("%s (%s)%n%n", prompt, pluralize(points));
+        return String.format("%s (%s)", prompt, pluralize(points));
     }
     public String getAnswer() { return "Not telling!"; }
     // setters and getters

@@ -2,6 +2,8 @@ package exam.build;
 
 import exam.question.*;
 
+import java.security.InvalidParameterException;
+
 /**
  * Created by Joe on 11/7/2015.
  */
@@ -18,26 +20,41 @@ public class ParseQuestions {
     // create MultipleChoiceQuestion from string
     public static MultipleChoiceQuestion parseMultiple(String str) {
         String[] strs = splitString(str);
-        int points = Integer.parseInt(strs[1]);
-        int chapter = Integer.parseInt(strs[2]);
-        String prompt = strs[3];
-        int numChoices = Integer.parseInt(strs[4]);
-        char answer = strs[5].charAt(0);
-        String[] choices = new String[numChoices];
-        for(int i=0; i<numChoices; i++)
-            choices[i] = strs[i+6];
+        int points, chapter;
+        String prompt;
+        char answer;
+        String[] choices;
+        try {
+            points = Integer.parseInt(strs[1]);
+            chapter = Integer.parseInt(strs[2]);
+            prompt = strs[3];
+            int numChoices = Integer.parseInt(strs[4]);
+            answer = strs[5].charAt(0);
+            choices = new String[numChoices];
+            for (int i = 0; i < numChoices; i++)
+                choices[i] = strs[i + 6];
+        } catch(Exception e) {
+            throw new InvalidParameterException(e.getMessage());
+        }
         return new MultipleChoiceQuestion(points, chapter, prompt, choices, answer);
     }
 
     // create ShortAnswerQuestion from string
     public static ShortAnswerQuestion parseShort(String str) {
         String[] strs = splitString(str);
-        int points = Integer.parseInt(strs[1]);
-        int chapter = Integer.parseInt(strs[2]);
-        String prompt = strs[3];
-        String[] answers = new String[strs.length - 4];
-        for(int i=0; i<answers.length; i++) {
-            answers[i] = strs[i+4];
+        int points, chapter;
+        String prompt;
+        String[] answers;
+        try {
+            points = Integer.parseInt(strs[1]);
+            chapter = Integer.parseInt(strs[2]);
+            prompt = strs[3];
+            answers = new String[strs.length - 4];
+            for (int i = 0; i < answers.length; i++) {
+                answers[i] = strs[i + 4];
+            }
+        } catch(Exception e) {
+            throw new InvalidParameterException(e.getMessage());
         }
         return new ShortAnswerQuestion(points, chapter, prompt, answers);
     }
@@ -45,10 +62,16 @@ public class ParseQuestions {
     // create LongAnswerQuestion from string
     public static LongAnswerQuestion parseLong(String str) {
         String[] strs = splitString(str);
-        int points = Integer.parseInt(strs[1]);
-        int chapter = Integer.parseInt(strs[2]);
-        String prompt = strs[3];
-        String answer = strs[4];
+        int points, chapter;
+        String prompt, answer;
+        try {
+            points = Integer.parseInt(strs[1]);
+            chapter = Integer.parseInt(strs[2]);
+            prompt = strs[3];
+            answer = strs[4];
+        } catch(Exception e) {
+            throw new InvalidParameterException(e.getMessage());
+        }
         return new LongAnswerQuestion(points, chapter, prompt, answer);
     }
 

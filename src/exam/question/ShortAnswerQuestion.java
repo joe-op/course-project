@@ -21,6 +21,15 @@ public class ShortAnswerQuestion extends Question {
     }
 
     @Override
+    public String getAnswer() {
+        String answer = answers[0];
+        for(int i=1; i<answers.length; i++) {
+            answer += ", " + answers[i];
+        }
+        return answer;
+    }
+
+    @Override
     public String toString() {
         return super.toString() + "\n\n\n";
     }

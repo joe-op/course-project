@@ -64,5 +64,16 @@ public class QuestionPoolTest extends TestCase {
         assert(!selectedQuestions.contains(longAnswer2));
     }
 
+    //TODO Chapters 1-9 returns less questions than Chapters 2-9
+    @Test
+    public void testShuffleRange() throws Exception {
+
+    }
+
+    @Test
+    public void testCullRange() throws Exception {
+
+    }
+
 
 }

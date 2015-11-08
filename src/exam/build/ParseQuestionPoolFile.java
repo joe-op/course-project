@@ -2,6 +2,7 @@ package exam.build;
 
 import exam.question.QuestionPool;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.security.InvalidParameterException;
@@ -12,8 +13,8 @@ import java.util.Scanner;
  */
 public class ParseQuestionPoolFile {
 
-    public static QuestionPool parseFile(String fileName) throws FileNotFoundException {
-        Scanner inFile = new Scanner(new FileReader(fileName));
+    public static QuestionPool parseFile(String filename) throws FileNotFoundException {
+        Scanner inFile = new Scanner(new FileReader(filename));
         QuestionPool questions = new QuestionPool();
         int lineNo = 0;
         while(inFile.hasNextLine()) {
@@ -39,6 +40,17 @@ public class ParseQuestionPoolFile {
             }
         }
         return questions;
+    }
+
+    // Quick check if file appears valid
+    public static boolean validateFile(String filename) throws FileNotFoundException {
+        Scanner inFile = new Scanner(new FileReader(filename));
+        if(inFile.hasNextLine()) {
+            String questionType = inFile.nextLine().split("@")[0];
+            return (questionType.equals("multiple") || questionType.equals("short") || questionType.equals("long"));
+        } else {
+            return false;
+        }
     }
 
 

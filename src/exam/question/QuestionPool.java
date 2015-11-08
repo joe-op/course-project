@@ -26,9 +26,7 @@ public class QuestionPool {
     }
 
     // Get questions from a range of chapters.
-    // Returns a *flat* list of questions to be randomized.
-    // TODO add public methods that use this (questions will need to be randomized and culled before returned)
-    // TODO make sure empty catch doesn't do anything
+    // Returns a list of questions to be randomized.
     public List<Question> chapterRange(int min, int max) throws IllegalArgumentException {
         if(min > 0 && min <= max) {
             List<Question> selectedChapterQuestions = new ArrayList<Question>();
@@ -45,10 +43,22 @@ public class QuestionPool {
         }
     }
 
-    public List<Question> shuffleRange(int min, int max) throws IllegalArgumentException {
+    // Return a randomized list of questions
+    public List<Question> shuffleRange(int min, int max) {
         List<Question> shuffledQuestions = chapterRange(min, max);
         Collections.shuffle(shuffledQuestions);
         return shuffledQuestions;
+    }
+
+    // Return a randomized list of questions with a limit on the number of questions
+    public List<Question> cullShuffleRange(int min, int max, int noQuestions) {
+        List<Question> culledQuestions;
+        try {
+            culledQuestions = shuffleRange(min, max).subList(0, noQuestions);
+        } catch(IndexOutOfBoundsException e) {
+            throw e;
+        }
+        return culledQuestions;
     }
 
     // find first item matching chapter

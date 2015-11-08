@@ -22,12 +22,14 @@ public class MultipleChoiceQuestion extends Question {
     public void setChoices(String[] choices) {
         this.choices = choices;
     }
-    public char getAnswer() {
-        return answer;
+    public String getAnswer() {
+        return String.valueOf(answer);
     }
 
     public void setAnswer(char answer) {
         this.answer = answer;
     }
+
+    // TODO override toString()
 
 }

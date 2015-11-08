@@ -18,8 +18,9 @@ public abstract class Question implements Comparable<Question> {
         this.prompt = prompt;
     }
     public String toString() {
-        return String.format("(%s)%s%n%n", pluralize(points), prompt);
+        return String.format("(%s) %s%n%n", pluralize(points), prompt);
     }
+    public String getAnswer() { return "Not telling!"; }
     // setters and getters
     public int getPoints() {
         return points;

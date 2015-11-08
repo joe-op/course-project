@@ -2,39 +2,17 @@ package exam.build;
 
 import exam.question.*;
 
-import java.security.InvalidParameterException;
-import java.util.regex.PatternSyntaxException;
-
 /**
  * Created by Joe on 11/7/2015.
  */
 public class ParseQuestions {
 
-    /*
-    public static Question parse(String str) {
-        Question question;
-        String[] questionStrs;
-        try {
-            questionStrs = str.split("@");
-        } catch (PatternSyntaxException ex) {
-            throw new InvalidParameterException("Not a valid string");
-        }    //
-        if(questionStrs[0].equals("multiple")) {
-            question = parseMultiple(questionStrs);
-        } else if(questionStrs[0].equals("short")) {
-            question = parseShort(questionStrs);
-        } else if(questionStrs[0].equals("long")) {
-            question = parseLong(questionStrs);
-        } else {
-            throw new InvalidParameterException("Not a valid question type");
-        }
-        return question;
-    }
-    */
+    // Get question type from string
     public static String getType(String str) {
         return str.substring(0, str.indexOf('@'));
     }
 
+    // Split string with values separated by "@"
     private static String[] splitString(String str) { return str.split("@"); }
 
     // create MultipleChoiceQuestion from string

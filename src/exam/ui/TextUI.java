@@ -1,6 +1,7 @@
 package exam.ui;
 
 import exam.build.ParseQuestionPoolFile;
+import exam.build.WriteExam;
 import exam.question.Question;
 import exam.question.QuestionPool;
 
@@ -11,7 +12,10 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by Joe on 10/30/2015.
+ * Takes a file containing a pool of exam questions, a number of questions to use,
+ * and a minimum & maximum chapter to take questions from.
+ * Writes shuffled questions & key to file.
+ * Displays total number of points in generated exam.
  */
 public class TextUI {
 
@@ -54,19 +58,10 @@ public class TextUI {
         } while(!validExam);
 
         // Print exam & key
-        PrintWriter outExam = new PrintWriter("exam.txt");
-        PrintWriter outKey = new PrintWriter("key.txt");
-        int questionNo = 1;
-        for(Question el : examQuestions) {
-            outExam.print(String.format("%2d. %s%n", questionNo, el));
-            outKey.print(String.format("%2d. %s%n", questionNo, el.getAnswer()));
-            questionNo++;
-        }
-        outExam.close();
-        outKey.close();
+        WriteExam.write(examQuestions, "exam.txt", "key.txt");
         // Display total number of points
         int points = 0;
-        for(Question el: examQuestions)
+        for(Question el : examQuestions)
             points += el.getPoints();
         System.out.print(
                 String.format("Total number of points: %d%n", points));

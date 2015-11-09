@@ -23,8 +23,9 @@ public class ShortAnswerQuestion extends Question {
     @Override
     public String getAnswer() {
         String answer = answers[0];
+        // Put any additional answers in the string
         for(int i=1; i<answers.length; i++) {
-            answer += ", " + answers[i];
+            answer += "\n" + answers[i];
         }
         return answer;
     }

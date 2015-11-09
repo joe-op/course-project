@@ -64,7 +64,6 @@ public class ParseQuestions {
     }
 
     // create LongAnswerQuestion from string
-    //TODO question pool may contain a multiple line answer
     public static LongAnswerQuestion parseLong(String str) {
         String[] strs = splitString(str);
         int points, chapter;
@@ -74,6 +73,9 @@ public class ParseQuestions {
             chapter = Integer.parseInt(strs[2]);
             prompt = strs[3];
             answer = strs[4];
+            // Add any additional lines to the answer
+            for (int i=5; i<strs.length; i++)
+                answer += "\n" + strs[i];
         } catch(Exception e) {
             throw new InvalidParameterException(e.getMessage());
         }

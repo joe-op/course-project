@@ -64,6 +64,7 @@ public class ParseQuestions {
     }
 
     // create LongAnswerQuestion from string
+    //TODO question pool may contain a multiple line answer
     public static LongAnswerQuestion parseLong(String str) {
         String[] strs = splitString(str);
         int points, chapter;

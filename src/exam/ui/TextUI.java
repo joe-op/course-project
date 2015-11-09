@@ -5,7 +5,6 @@ import exam.question.Question;
 import exam.question.QuestionPool;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +43,7 @@ public class TextUI {
         List<Question> examQuestions = new ArrayList<Question>();
         do {
             noQuestions = getInt("Enter the number of questions:", 0);
-            minChapter = getInt("Enter the minimum chapter to take questions from:", 0);
+            minChapter = getInt("Enter the minimum chapter to take questions from:", 1);
             maxChapter = getInt("Enter the maximum chapter to take questions from:", minChapter);
             try {
                 examQuestions = questions.cullShuffleRange(minChapter, maxChapter, noQuestions);

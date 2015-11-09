@@ -15,7 +15,7 @@ public class ParseQuestionsTest extends TestCase {
     public void setUp() {
         multiple = "multiple@1@2@Which header file must be included to use an object of the string class?@5@b@namespace std@string@string.h@cstring@iostream";
         shortAnswer = "short@1@10@In inheritance, what is the technical term for the \"parent\" class?@base class";
-        longAnswer = "long@5@7@Describe Jar Jar Binks.@Hated by many, Jar Jar may turn out to be a super villain.";
+        longAnswer = "long@5@7@Describe Jar Jar Binks.@Hated by many, Jar Jar may turn out to be a super villain.@We'll see this December.";
     }
 
 
@@ -33,7 +33,7 @@ public class ParseQuestionsTest extends TestCase {
         assertEquals("string.h", answers[2]);
         assertEquals("cstring", answers[3]);
         assertEquals("iostream", answers[4]);
-        assertEquals('b', multipleQ.getAnswer());
+        assertEquals("b", multipleQ.getAnswer());
     }
 
     @Test
@@ -55,7 +55,7 @@ public class ParseQuestionsTest extends TestCase {
         assertEquals(5, longQ.getPoints());
         assertEquals(7, longQ.getChapter());
         assertEquals("Describe Jar Jar Binks.", longQ.getPrompt());
-        assertEquals("Hated by many, Jar Jar may turn out to be a super villain.", longQ.getAnswer());
+        assertEquals("Hated by many, Jar Jar may turn out to be a super villain.\nWe'll see this December.", longQ.getAnswer());
 
     }
 

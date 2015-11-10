@@ -24,7 +24,13 @@ public class Exam {
     public Exam(QuestionPool questions) {
         this.questions = questions;
     }
-
+    /* TODO
+        Refactor WriteExam into this class
+        Refactor Exam to contain list of questions
+        Change TextUI to: Load questions into question pool variable
+                          Use question pool to make exam variable
+        Let QuestionPool have methods related to validating & loading the file
+     */
     // write exam and key to file
     // returns -1 if not enough questions
     public int write(int minChapter, int maxChapter, int noQuestions, String examFile, String keyFile) throws FileNotFoundException {

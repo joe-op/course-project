@@ -4,6 +4,7 @@ import exam.Exam;
 import exam.question.QuestionPool;
 
 import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -42,7 +43,7 @@ public class TextUI {
         int noQuestions, minChapter, maxChapter;
         boolean validExam = false;
         do {
-            noQuestions = getInt("Enter the number of questions:", 0);
+            noQuestions = getInt("Enter the number of questions:", 1);
             minChapter = getInt("Enter the minimum chapter to take questions from:", 1);
             maxChapter = getInt("Enter the maximum chapter to take questions from:", minChapter);
             //points = exam.write(minChapter, maxChapter, noQuestions, EXAM_FILE, KEY_FILE);
@@ -60,15 +61,17 @@ public class TextUI {
 
     // get integer input with minimum value
     private static int getInt(String prompt, int min) {
-        boolean validInput;
-        int input;
+        String inputStr;
+        int input = min - 1;
         do {
             System.out.println(prompt);
-            input = console.nextInt();
-            validInput = (input >= min);
-            if (!validInput)
-                System.out.print(String.format("%d is not a valid entry.%n", input));
-        } while (!validInput);
+            inputStr = console.next();
+            try {
+                input = Integer.parseInt(inputStr);
+            } catch(NumberFormatException e) {
+                System.out.println(inputStr + " is not a valid entry.");
+            }
+        } while (input <= min);
         return input;
     }
 

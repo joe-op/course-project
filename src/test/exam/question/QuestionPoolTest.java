@@ -50,22 +50,6 @@ public class QuestionPoolTest {
     }
 
     @Test
-    public void testChapterRange() throws Exception {
-        List<Question> selectedQuestions = questions.chapterRange(1,2);
-        assert(selectedQuestions.contains(multipleChoice1));
-        assert(selectedQuestions.contains(longAnswer1));
-        assert(selectedQuestions.contains(shortAnswer1));
-        assert(selectedQuestions.contains(shortAnswer2));
-        assert(!selectedQuestions.contains(multipleChoice2));
-        assert(!selectedQuestions.contains(longAnswer2));
-    }
-
-    @Test
-    public void testShuffleRange() throws Exception {
-
-    }
-
-    @Test
     public void testCullRange() throws Exception {
 
     }

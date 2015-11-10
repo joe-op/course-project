@@ -1,6 +1,8 @@
 package exam.ui;
 
 import exam.Exam;
+import exam.question.QuestionPool;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -13,6 +15,7 @@ import java.util.Scanner;
 public class TextUI {
 
     private static Scanner console = new Scanner(System.in);
+    private static QuestionPool questionPool = new QuestionPool();
     private static Exam exam = new Exam();
     private static final String EXAM_FILE = "exam.txt";
     private static final String KEY_FILE = "key.txt";
@@ -26,27 +29,32 @@ public class TextUI {
             System.out.println("Enter the name of the file containing exam questions: ");
             filename = console.nextLine();
             try {
-                validFile = Exam.validateFile(filename);
+                validFile = questionPool.load(filename);
                 if(!validFile)
                     System.out.println("File does not contain valid data.");
             } catch(FileNotFoundException e) {
                 System.out.println("File was not found.");
             }
         } while(!validFile);
-        exam.load(filename);
 
         // Get number of questions and range of chapters
 
-        int noQuestions, minChapter, maxChapter, points;
+        int noQuestions, minChapter, maxChapter;
+        boolean validExam = false;
         do {
             noQuestions = getInt("Enter the number of questions:", 0);
             minChapter = getInt("Enter the minimum chapter to take questions from:", 1);
             maxChapter = getInt("Enter the maximum chapter to take questions from:", minChapter);
-            points = exam.write(minChapter, maxChapter, noQuestions, EXAM_FILE, KEY_FILE);
-            if(points == -1)
-                System.out.println("Not enough questions.");
-        } while(points == -1);
-        System.out.print(String.format("Total number of points: %d%n", points));
+            //points = exam.write(minChapter, maxChapter, noQuestions, EXAM_FILE, KEY_FILE);
+            try {
+                exam = questionPool.makeExam(minChapter, maxChapter, noQuestions);
+                validExam = true;
+            } catch(IndexOutOfBoundsException e) {
+                System.out.println("Not enough questions");
+            }
+        } while(!validExam);
+        exam.write(EXAM_FILE, KEY_FILE);
+        System.out.print(String.format("Total number of points: %d%n", exam.getPoints()));
 
     }
 

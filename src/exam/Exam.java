@@ -1,11 +1,11 @@
 package exam;
 
 import exam.build.ParseQuestionPoolFile;
-import exam.build.WriteExam;
 import exam.question.Question;
-import exam.question.QuestionPool;
 
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,13 +15,13 @@ import java.util.List;
  */
 public class Exam {
 
-    private QuestionPool questions;
+    private List<Question> questions;
 
     public Exam() {
-        questions = new QuestionPool();
+        questions = new ArrayList<Question>();
     }
 
-    public Exam(QuestionPool questions) {
+    public Exam(List<Question> questions) {
         this.questions = questions;
     }
     /* TODO
@@ -33,26 +33,45 @@ public class Exam {
      */
     // write exam and key to file
     // returns -1 if not enough questions
-    public int write(int minChapter, int maxChapter, int noQuestions, String examFile, String keyFile) throws FileNotFoundException {
-        List<Question> selectedQuestions;
-        try {
-            selectedQuestions = questions.cullShuffleRange(minChapter, maxChapter, noQuestions);
-        } catch(IndexOutOfBoundsException e) {
-            return -1;
-        }
-        WriteExam.write(selectedQuestions, examFile, keyFile);
+
+    public int getPoints() {
         int points = 0;
-        for(Question q : selectedQuestions)
+        for (Question q : questions)
             points += q.getPoints();
         return points;
     }
 
-    public void load(String filename) throws FileNotFoundException {
-        questions = ParseQuestionPoolFile.parseFile(filename);
+    public void write(String examFile, String keyFile) throws FileNotFoundException {
+        writeExam(examFile);
+        writeKey(keyFile);
     }
 
     public static boolean validateFile(String filename) throws FileNotFoundException {
         return ParseQuestionPoolFile.validateFile(filename);
+    }
+
+    private void writeExam(String file) throws FileNotFoundException {
+        PrintWriter outExam = new PrintWriter(file);
+        int questionNo = 1;
+        for(Question q : questions) {
+            outExam.print(String.format("%2d. %s%n", questionNo, q));
+            questionNo++;
+        }
+        outExam.close();
+    }
+
+    private void writeKey(String file) throws FileNotFoundException {
+        PrintWriter outKey = new PrintWriter(file);
+        int questionNo = 1;
+        for(Question q : questions) {
+            // Add 4 spaces in front of any additional lines in answer
+            String[] answer = q.getAnswer().split("\n");
+            outKey.print(String.format("%2d. %s%n", questionNo, answer[0]));
+            for(int i=1; i<answer.length; i++)
+                outKey.println("    " + answer[i]);
+            questionNo++;
+        }
+        outKey.close();
     }
 
 }

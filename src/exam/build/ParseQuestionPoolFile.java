@@ -1,10 +1,13 @@
 package exam.build;
 
+import exam.question.Question;
 import exam.question.QuestionPool;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -12,9 +15,9 @@ import java.util.Scanner;
  */
 public class ParseQuestionPoolFile {
 
-    public static QuestionPool parseFile(String filename) throws FileNotFoundException {
+    public static List<Question> parseFile(String filename) throws FileNotFoundException {
         Scanner inFile = new Scanner(new FileReader(filename));
-        QuestionPool questions = new QuestionPool();
+        List<Question> questions = new ArrayList<Question>();
         int lineNo = 0;
         while(inFile.hasNextLine()) {
             String line = inFile.nextLine();
@@ -22,11 +25,11 @@ public class ParseQuestionPoolFile {
             try {
                 String questionType = ParseQuestions.getType(line);
                 if (questionType.equals("multiple")) {
-                    questions.addQuestion(ParseQuestions.parseMultiple(line));
+                    questions.add(ParseQuestions.parseMultiple(line));
                 } else if (questionType.equals("short")) {
-                    questions.addQuestion(ParseQuestions.parseShort(line));
+                    questions.add(ParseQuestions.parseShort(line));
                 } else if (questionType.equals("long")) {
-                    questions.addQuestion(ParseQuestions.parseLong(line));
+                    questions.add(ParseQuestions.parseLong(line));
                 } else {
                     System.out.print(
                             String.format("Invalid question type at line %d.%n%s%n",

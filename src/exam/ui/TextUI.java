@@ -1,14 +1,7 @@
 package exam.ui;
 
-import exam.build.ParseQuestionPoolFile;
-import exam.build.WriteExam;
-import exam.question.Question;
-import exam.question.QuestionPool;
-
+import exam.Exam;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -20,7 +13,9 @@ import java.util.Scanner;
 public class TextUI {
 
     private static Scanner console = new Scanner(System.in);
-    private static QuestionPool questions;
+    private static Exam exam = new Exam();
+    private static final String EXAM_FILE = "exam.txt";
+    private static final String KEY_FILE = "key.txt";
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -31,59 +26,42 @@ public class TextUI {
             System.out.println("Enter the name of the file containing exam questions: ");
             filename = console.nextLine();
             try {
-                validFile = ParseQuestionPoolFile.validateFile(filename);
+                validFile = Exam.validateFile(filename);
                 if(!validFile)
                     System.out.println("File does not contain valid data.");
             } catch(FileNotFoundException e) {
                 System.out.println("File was not found.");
             }
         } while(!validFile);
-        questions = ParseQuestionPoolFile.parseFile(filename);
+        exam.load(filename);
 
         // Get number of questions and range of chapters
 
-        boolean validExam = false;
-        int noQuestions, minChapter, maxChapter;
-        List<Question> examQuestions = new ArrayList<Question>();
+        int noQuestions, minChapter, maxChapter, points;
         do {
             noQuestions = getInt("Enter the number of questions:", 0);
             minChapter = getInt("Enter the minimum chapter to take questions from:", 1);
             maxChapter = getInt("Enter the maximum chapter to take questions from:", minChapter);
-            try {
-                examQuestions = questions.cullShuffleRange(minChapter, maxChapter, noQuestions);
-                validExam = true;
-            } catch(IndexOutOfBoundsException e) {
+            points = exam.write(minChapter, maxChapter, noQuestions, EXAM_FILE, KEY_FILE);
+            if(points == -1)
                 System.out.println("Not enough questions.");
-            }
-        } while(!validExam);
-
-        // Print exam & key
-        WriteExam.write(examQuestions, "exam.txt", "key.txt");
-        // Display total number of points
-        int points = 0;
-        for(Question el : examQuestions)
-            points += el.getPoints();
-        System.out.print(
-                String.format("Total number of points: %d%n", points));
-
-
+        } while(points == -1);
+        System.out.print(String.format("Total number of points: %d%n", points));
 
     }
 
-    // get integer input within a certain range
+    // get integer input with minimum value
     private static int getInt(String prompt, int min) {
-        boolean validInput = false;
+        boolean validInput;
         int input;
         do {
             System.out.println(prompt);
             input = console.nextInt();
             validInput = (input >= min);
             if (!validInput)
-                System.out.print(String.format("%d is not a valid entry.%n%s%n", input, prompt));
+                System.out.print(String.format("%d is not a valid entry.%n", input));
         } while (!validInput);
         return input;
     }
-
-
 
 }

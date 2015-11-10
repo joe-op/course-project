@@ -5,21 +5,23 @@ import exam.question.*;
 import java.security.InvalidParameterException;
 
 /**
- * Created by Joe on 11/7/2015.
+ * Methods for handling a string containing a single question
  */
 public class ParseQuestions {
 
+    private static final char DELIMITER = '@';
+
     // Get question type from string
     public static String getType(String str) {
-        if(str.indexOf('@') != -1) {
-            return str.substring(0, str.indexOf('@'));
+        if(str.indexOf(DELIMITER) != -1) {
+            return str.substring(0, str.indexOf(DELIMITER));
         } else {
             return "";
         }
     }
 
-    // Split string with values separated by "@"
-    private static String[] splitString(String str) { return str.split("@"); }
+    // Split string with values separated by DELIMITER
+    private static String[] splitString(String str) { return str.split(String.valueOf(DELIMITER)); }
 
     // create MultipleChoiceQuestion from string
     public static MultipleChoiceQuestion parseMultiple(String str) {

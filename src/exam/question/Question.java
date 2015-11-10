@@ -1,5 +1,7 @@
 package exam.question;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  * Question - 10/28/15
  * Has integers points & chapter and String prompt
@@ -56,7 +58,7 @@ public abstract class Question implements Comparable<Question> {
     }
 
 
-    @Override
+    @Override @NotNull
     public int compareTo(Question o) {
         if (this.chapter < o.chapter)
             return -1;

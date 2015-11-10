@@ -1,13 +1,9 @@
 package exam.build;
 
 import exam.question.*;
-import junit.framework.TestCase;
 import org.junit.*;
 
-/**
- * Created by Joe on 11/7/2015.
- */
-public class ParseQuestionsTest extends TestCase {
+public class ParseQuestionsTest {
 
     private static String multiple, shortAnswer, longAnswer;
 
@@ -21,41 +17,41 @@ public class ParseQuestionsTest extends TestCase {
 
     @Test
     public void testParseMultiple() throws Exception {
-        assertEquals("multiple", ParseQuestions.getType(multiple));
+        Assert.assertEquals("multiple", ParseQuestions.getType(multiple));
         MultipleChoiceQuestion multipleQ = ParseQuestions.parseMultiple(multiple);
-        assertEquals(1, multipleQ.getPoints());
-        assertEquals(2, multipleQ.getChapter());
-        assertEquals("Which header file must be included to use an object of the string class?", multipleQ.getPrompt());
+        Assert.assertEquals(1, multipleQ.getPoints());
+        Assert.assertEquals(2, multipleQ.getChapter());
+        Assert.assertEquals("Which header file must be included to use an object of the string class?", multipleQ.getPrompt());
         String[] answers = multipleQ.getChoices();
-        assertEquals(5, answers.length);
-        assertEquals("namespace std", answers[0]);
-        assertEquals("string", answers[1]);
-        assertEquals("string.h", answers[2]);
-        assertEquals("cstring", answers[3]);
-        assertEquals("iostream", answers[4]);
-        assertEquals("b", multipleQ.getAnswer());
+        Assert.assertEquals(5, answers.length);
+        Assert.assertEquals("namespace std", answers[0]);
+        Assert.assertEquals("string", answers[1]);
+        Assert.assertEquals("string.h", answers[2]);
+        Assert.assertEquals("cstring", answers[3]);
+        Assert.assertEquals("iostream", answers[4]);
+        Assert.assertEquals("b", multipleQ.getAnswer());
     }
 
     @Test
     public void testParseShort() throws Exception {
-        assertEquals("short", ParseQuestions.getType(shortAnswer));
+        Assert.assertEquals("short", ParseQuestions.getType(shortAnswer));
         ShortAnswerQuestion shortQ = ParseQuestions.parseShort(shortAnswer);
-        assertEquals(1, shortQ.getPoints());
-        assertEquals(10, shortQ.getChapter());
-        assertEquals("In inheritance, what is the technical term for the \"parent\" class?", shortQ.getPrompt());
+        Assert.assertEquals(1, shortQ.getPoints());
+        Assert.assertEquals(10, shortQ.getChapter());
+        Assert.assertEquals("In inheritance, what is the technical term for the \"parent\" class?", shortQ.getPrompt());
         String[] answers = shortQ.getAnswers();
-        assertEquals(1, answers.length);
-        assertEquals("base class", answers[0]);
+        Assert.assertEquals(1, answers.length);
+        Assert.assertEquals("base class", answers[0]);
     }
 
     @Test
     public void testParseLong() throws Exception {
-        assertEquals("long", ParseQuestions.getType(longAnswer));
+        Assert.assertEquals("long", ParseQuestions.getType(longAnswer));
         LongAnswerQuestion longQ = ParseQuestions.parseLong(longAnswer);
-        assertEquals(5, longQ.getPoints());
-        assertEquals(7, longQ.getChapter());
-        assertEquals("Describe Jar Jar Binks.", longQ.getPrompt());
-        assertEquals("Hated by many, Jar Jar may turn out to be a super villain.\nWe'll see this December.", longQ.getAnswer());
+        Assert.assertEquals(5, longQ.getPoints());
+        Assert.assertEquals(7, longQ.getChapter());
+        Assert.assertEquals("Describe Jar Jar Binks.", longQ.getPrompt());
+        Assert.assertEquals("Hated by many, Jar Jar may turn out to be a super villain.\nWe'll see this December.", longQ.getAnswer());
 
     }
 

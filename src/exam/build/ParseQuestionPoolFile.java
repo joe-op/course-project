@@ -2,14 +2,13 @@ package exam.build;
 
 import exam.question.QuestionPool;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.security.InvalidParameterException;
 import java.util.Scanner;
 
 /**
- * Created by Joe on 11/7/2015.
+ * Methods for handling a question pool file
  */
 public class ParseQuestionPoolFile {
 

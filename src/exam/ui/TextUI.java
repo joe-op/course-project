@@ -4,7 +4,6 @@ import exam.Exam;
 import exam.question.QuestionPool;
 
 import java.io.FileNotFoundException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -66,12 +65,25 @@ public class TextUI {
         do {
             System.out.println(prompt);
             inputStr = console.next();
-            try {
-                input = Integer.parseInt(inputStr);
-            } catch(NumberFormatException e) {
+            input = validateInt(inputStr, min - 1);
+            if(input < min)
                 System.out.println(inputStr + " is not a valid entry.");
-            }
         } while (input <= min);
+        return input;
+    }
+
+    /*
+    validate integer input
+    use this method so that an invalid String or an integer too low
+    will both cause the invalid warning to be printed
+    */
+    private static int validateInt(String str, int flag) {
+        int input;
+        try {
+            input = Integer.parseInt(str);
+        } catch(NumberFormatException e) {
+            return flag;
+        }
         return input;
     }
 

@@ -68,7 +68,7 @@ public class TextUI {
             input = validateInt(inputStr, min - 1);
             if(input < min)
                 System.out.println(inputStr + " is not a valid entry.");
-        } while (input <= min);
+        } while (input < min);
         return input;
     }
 

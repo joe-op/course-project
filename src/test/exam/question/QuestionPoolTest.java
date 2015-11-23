@@ -1,8 +1,13 @@
 package exam.question;
 
 import org.junit.*;
-
 import java.util.List;
+import static org.junit.Assert.*;
+
+/*
+ * Test QuestionPool class
+ */
+
 
 public class QuestionPoolTest {
 
@@ -34,13 +39,12 @@ public class QuestionPoolTest {
         questions.addQuestion(longAnswer2);
         questions.addQuestion(shortAnswer1);
         questions.addQuestion(shortAnswer2);
-        // Use to test addQuestion()
         questions2 = new QuestionPool();
 
     }
 
     @Test
-    public void testAddQuestion() throws Exception {
+    public void testAddQuestion() {
         questions2.addQuestion(multipleChoice1);
         assert(questions2.getQuestionList().contains(multipleChoice1));
         questions2.addQuestion(longAnswer1);
@@ -50,8 +54,22 @@ public class QuestionPoolTest {
     }
 
     @Test
-    public void testCullRange() throws Exception {
-
+    public void testMakeExam() {
+        List<Question> chapter1Exam = questions.makeExam(1,1,2).getQuestions();
+        assertEquals(2, chapter1Exam.size());
+        assert(chapter1Exam.contains(shortAnswer1));
+        assert(chapter1Exam.contains(shortAnswer2));
+        List<Question> chapter1to3Exam = questions.makeExam(1,3,4).getQuestions();
+        assertEquals(4, chapter1to3Exam.size());
+        assert(!chapter1to3Exam.contains(multipleChoice2));
+        List<Question> finalExam = questions.makeExam(1,4,6).getQuestions();
+        assertEquals(6, finalExam.size());
+        assert(finalExam.contains(multipleChoice1));
+        assert(finalExam.contains(multipleChoice2));
+        assert(finalExam.contains(longAnswer1));
+        assert(finalExam.contains(longAnswer2));
+        assert(finalExam.contains(shortAnswer1));
+        assert(finalExam.contains(shortAnswer2));
     }
 
 

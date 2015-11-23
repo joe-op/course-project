@@ -25,13 +25,18 @@ public class Exam {
         this.questions = questions;
     }
 
+    // getters
     public int getPoints() {
         int points = 0;
         for (Question q : questions)
             points += q.getPoints();
         return points;
     }
+    public List<Question> getQuestions() {
+        return questions;
+    }
 
+    // write exam & key to file
     public void write(String examFile, String keyFile) throws FileNotFoundException {
         writeExam(examFile);
         writeKey(keyFile);
@@ -41,6 +46,7 @@ public class Exam {
         return ParseQuestionPoolFile.validateFile(filename);
     }
 
+    // write exam to file
     private void writeExam(String file) throws FileNotFoundException {
         PrintWriter outExam = new PrintWriter(file);
         int questionNo = 1;
@@ -51,6 +57,7 @@ public class Exam {
         outExam.close();
     }
 
+    // write key to file
     private void writeKey(String file) throws FileNotFoundException {
         PrintWriter outKey = new PrintWriter(file);
         int questionNo = 1;

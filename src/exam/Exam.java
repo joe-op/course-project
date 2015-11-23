@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Joe Opseth & Bel Sahn
+ * Course Project CS235
+ * 23 November 2015
+ *
+ *
  * Exam class with QuestionPool
  * Provides methods for validating a question pool file, loading a question pool file,
  * and writing an exam & key to file

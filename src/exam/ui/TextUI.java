@@ -7,6 +7,11 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
+ * Joe Opseth & Bel Sahn
+ * Course Project CS235
+ * 23 November 2015
+ *
+ *
  * Takes a file containing a pool of exam questions, a number of questions to use,
  * and a minimum & maximum chapter to take questions from.
  * Writes shuffled questions & key to file.

@@ -87,6 +87,7 @@ public class ExamWindow extends JFrame {
         toggleExamKeyB.setEnabled(false);
 
         output = new JTextArea(30, 30);
+        // output.setEnabled(false); // can't select text
         outputScroll = new JScrollPane(output);
 
         Container pane = getContentPane();
@@ -130,9 +131,6 @@ public class ExamWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
-    public static void main(String[] args) {
-        ExamWindow ew = new ExamWindow(new QuestionPool());
-    }
 
     private class SubmitButtonHandler implements ActionListener {
         @Override
@@ -147,7 +145,9 @@ public class ExamWindow extends JFrame {
                     displayExam();
                     toggleExamKeyB.setEnabled(true);
                 } else {
-                    output.setText("Not enough questions!");
+                    output.setText(
+                            String.format("Not enough questions!%nNumber of questions in that range: %d.",
+                                    exam.getQuestions().size()));
                     toggleExamKeyB.setEnabled(false);
                 }
             } catch(NumberFormatException e) {

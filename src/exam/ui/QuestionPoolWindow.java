@@ -60,6 +60,7 @@ public class QuestionPoolWindow extends JFrame {
         // add listener to button
         CheckButtonHandler cbHandler = new CheckButtonHandler();
         checkB.addActionListener(cbHandler);
+        fileTF.addActionListener(cbHandler);
 
         // add elements to pane
         pane.add(fileL);

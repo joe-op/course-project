@@ -51,29 +51,41 @@ public class Exam {
         return ParseQuestionPoolFile.validateFile(filename);
     }
 
+    // toString
+    public String toString() {
+        String str = "";
+        int questionNo = 1;
+        for(Question q : questions) {
+            str += String.format("%2d. %s%n", questionNo, q);
+            questionNo++;
+        }
+        return str;
+    }
+
+    public String keyToString() {
+        String str = "";
+        int questionNo = 1;
+        for(Question q : questions) {
+            String[] answer = q.getAnswer().split("\n");
+            str += String.format("%2d. %s%n", questionNo, answer[0]);
+            for (int i = 1; i < answer.length; i++)
+                str += String.format("    %s%n", answer[i]);
+            questionNo++;
+        }
+        return str;
+    }
+
     // write exam to file
     private void writeExam(String file) throws FileNotFoundException {
         PrintWriter outExam = new PrintWriter(file);
-        int questionNo = 1;
-        for(Question q : questions) {
-            outExam.print(String.format("%2d. %s%n", questionNo, q));
-            questionNo++;
-        }
+        outExam.print(toString());
         outExam.close();
     }
 
     // write key to file
     private void writeKey(String file) throws FileNotFoundException {
         PrintWriter outKey = new PrintWriter(file);
-        int questionNo = 1;
-        for(Question q : questions) {
-            // Add 4 spaces in front of any additional lines in answer
-            String[] answer = q.getAnswer().split("\n");
-            outKey.print(String.format("%2d. %s%n", questionNo, answer[0]));
-            for(int i=1; i<answer.length; i++)
-                outKey.println("    " + answer[i]);
-            questionNo++;
-        }
+        outKey.print(keyToString());
         outKey.close();
     }
 

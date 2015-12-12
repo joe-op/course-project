@@ -51,11 +51,11 @@ public class TextUI {
             minChapter = getInt("Enter the minimum chapter to take questions from:", 1);
             maxChapter = getInt("Enter the maximum chapter to take questions from:", minChapter);
             //points = exam.write(minChapter, maxChapter, noQuestions, EXAM_FILE, KEY_FILE);
-            try {
-                exam = questionPool.makeExam(minChapter, maxChapter, noQuestions);
+            exam = questionPool.makeExam(minChapter, maxChapter, noQuestions);
+            if(exam.getQuestions().size() == noQuestions) {
                 validExam = true;
-            } catch(IndexOutOfBoundsException e) {
-                System.out.println("Not enough questions");
+            } else {
+                System.out.println("Not enough questions!");
             }
         } while(!validExam);
         exam.write(EXAM_FILE, KEY_FILE);

@@ -1,6 +1,6 @@
 package exam.ui;
 
-import com.sun.java.util.jar.pack.ConstantPool;
+
 import exam.Exam;
 import exam.question.Question;
 import exam.question.QuestionPool;
@@ -112,14 +112,14 @@ public class ExamWindow extends JFrame {
                 noQuestions = Integer.parseInt(noQuestionsTF.getText());
                 minChapter = Integer.parseInt(minChapterTF.getText());
                 maxChapter = Integer.parseInt(maxChapterTF.getText());
+                exam = questionPool.makeExam(minChapter, maxChapter, noQuestions);
+                if(exam.getQuestions().size() == noQuestions) {
+
+                }
             } catch(NumberFormatException e) {
                 output.setText("Invalid input!");
             }
-            try {
-                exam = questionPool.makeExam(minChapter, maxChapter, noQuestions);
-            } catch(IndexOutOfBoundsException e) {
-                output.setText("Not enough questions!");
-            }
+
         }
     }
 

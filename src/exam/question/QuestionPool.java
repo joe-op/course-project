@@ -62,10 +62,11 @@ public class QuestionPool {
 
     // Return a randomized list of questions with a limit on the number of questions
     private List<Question> cullShuffleRange(int min, int max, int noQuestions) {
-        if(noQuestions <= questionList.size()) {
-            return shuffleRange(min, max).subList(0, noQuestions);
+        List<Question> range = shuffleRange(min, max);
+        if(noQuestions <= range.size()) {
+            return range.subList(0, noQuestions);
         } else {
-            throw new IndexOutOfBoundsException("Not enough questions");
+            return range;
         }
     }
 

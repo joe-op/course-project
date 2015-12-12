@@ -84,7 +84,7 @@ public class QuestionPoolWindow extends JFrame {
             try {
                 if (questionPool.load(filename)) {
                     setVisible(false);
-                   ExamWindow examWindow = new ExamWindow(questionPool);
+                    ExamWindow examWindow = new ExamWindow(questionPool);
                 } else {
                     log.setText("File not valid!");
                 }

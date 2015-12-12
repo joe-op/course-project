@@ -1,17 +1,21 @@
 package exam.ui;
 
+import exam.build.ParseQuestionPoolFile;
+import exam.question.QuestionPool;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 /**
  * Provides a window to enter the location of a question pool file
  * and verify that the file is valid
  */
-public class QuestionPoolWindow extends JFrame
-    implements ActionListener {
+public class QuestionPoolWindow extends JFrame {
 
     private static final int WIDTH = 480;
     private static final int HEIGHT = 250;
@@ -24,7 +28,11 @@ public class QuestionPoolWindow extends JFrame
 
     private JTextArea log;
 
+    private QuestionPool questionPool;
+
     public QuestionPoolWindow() {
+
+        questionPool = new QuestionPool();
 
         setTitle("Question Pool");
         setSize(WIDTH, HEIGHT);
@@ -50,7 +58,8 @@ public class QuestionPoolWindow extends JFrame
         log.setSize(300, 30);
 
         // add listener to button
-        checkB.addActionListener(this);
+        CheckButtonHandler cbHandler = new CheckButtonHandler();
+        checkB.addActionListener(cbHandler);
 
         // add elements to pane
         pane.add(fileL);
@@ -68,15 +77,21 @@ public class QuestionPoolWindow extends JFrame
         QuestionPoolWindow qpw = new QuestionPoolWindow();
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        log.append("Hi! ");
+    private class CheckButtonHandler implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent arg0) {
+            String filename = fileTF.getText();
+            try {
+                if (questionPool.load(filename)) {
+                    setVisible(false);
+                   ExamWindow examWindow = new ExamWindow(questionPool);
+                } else {
+                    log.setText("File not valid!");
+                }
+            } catch(FileNotFoundException e) {
+                log.setText("File not found!");
+            }
+        }
     }
-
-
-
-
-
-
 
 }

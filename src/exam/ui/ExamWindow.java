@@ -74,8 +74,8 @@ public class ExamWindow extends JFrame {
         maxChapterTF.addActionListener(sbHandler);
 
         // toggle exam/key action
-        toggleExamKeyB = new JButton("Check Key");
-        ToggleKeyExamButtonHandler tekbHandler = new ToggleKeyExamButtonHandler();
+        toggleExamKeyB = new JButton(CHECK_KEY_LABEL);
+        ToggleExamKeyButtonHandler tekbHandler = new ToggleExamKeyButtonHandler();
         toggleExamKeyB.addActionListener(tekbHandler);
         toggleExamKeyB.setEnabled(false);
 
@@ -155,7 +155,7 @@ public class ExamWindow extends JFrame {
         }
     }
 
-    private class ToggleKeyExamButtonHandler implements ActionListener {
+    private class ToggleExamKeyButtonHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent arg0) {
             if(toggleExamKeyB.getText().equals(CHECK_KEY_LABEL)) {
@@ -174,12 +174,12 @@ public class ExamWindow extends JFrame {
                         "Built exam with %d questions and %d points:%n%n%s",
                         noQuestions, points, exam.toString()));
         output.setCaretPosition(0);
-        toggleExamKeyB.setText("Check Key");
+        toggleExamKeyB.setText(CHECK_KEY_LABEL);
     }
     private void displayKey() {
         output.setText(exam.keyToString());
         output.setCaretPosition(0);
-        toggleExamKeyB.setText("Check Exam");
+        toggleExamKeyB.setText(CHECK_EXAM_LABEL);
     }
 
 

@@ -72,7 +72,7 @@ public class GraphicsUI extends JFrame {
         pane.add(checkB);
         pane.add(log);
 
-
+        setLocation(100, 60);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

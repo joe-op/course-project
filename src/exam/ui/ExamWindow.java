@@ -127,6 +127,7 @@ public class ExamWindow extends JFrame {
         pane.add(toggleExamKeyB);
         pane.add(outputScroll);
 
+        setLocation(100, 60);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

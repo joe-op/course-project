@@ -54,12 +54,7 @@ public class ExamWindow extends JFrame {
     public ExamWindow(QuestionPool questionPoolP) {
 
         questionPool = questionPoolP;
-        // TODO remove this
-        try {
-            questionPool.load("question-pool.txt");
-        } catch(FileNotFoundException e)
-        {}
-
+        
         setTitle("Exam");
         setSize(WIDTH, HEIGHT);
 

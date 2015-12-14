@@ -9,8 +9,15 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 
 /**
+ * Joe Opseth & Bel Sahn
+ * Course Project CS235
+ * 13 December 2015
+ *
+
  * Provides a window to enter the location of a question pool file
- * and verify that the file is valid
+ * and verify that the file is valid.
+ * Launches a second window to work with the exam
+ *
  */
 public class GraphicsUI extends JFrame {
 

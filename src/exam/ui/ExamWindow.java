@@ -146,7 +146,7 @@ public class ExamWindow extends JFrame {
                     toggleExamKeyB.setEnabled(true);
                 } else {
                     output.setText(
-                            String.format("Not enough questions!%nNumber of questions in that range: %d.",
+                            String.format("Not enough questions!%nNumber of questions in that range: %d",
                                     exam.getQuestions().size()));
                     toggleExamKeyB.setEnabled(false);
                 }

@@ -79,7 +79,7 @@ public class GraphicsUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        GraphicsUI qpw = new GraphicsUI();
+        GraphicsUI graphicsUI = new GraphicsUI();
     }
 
     private class CheckButtonHandler implements ActionListener {

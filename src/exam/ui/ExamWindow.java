@@ -155,8 +155,8 @@ public class ExamWindow extends JFrame {
                 output.setText("Invalid input!");
                 toggleExamKeyB.setEnabled(false);
             } catch(Exception e) {
-                toggleExamKeyB.setEnabled(false);
                 output.setText(e.getMessage());
+                toggleExamKeyB.setEnabled(false);
             }
 
         }
@@ -181,12 +181,12 @@ public class ExamWindow extends JFrame {
                         "Built exam with %d questions and %d points:%n%n%s",
                         noQuestions, points, exam.toString()));
         output.setCaretPosition(0);
-        toggleExamKeyB.setText("Check Key");
+        toggleExamKeyB.setText(CHECK_KEY_LABEL);
     }
     private void displayKey() {
         output.setText(exam.keyToString());
         output.setCaretPosition(0);
-        toggleExamKeyB.setText("Check Exam");
+        toggleExamKeyB.setText(CHECK_EXAM_LABEL);
     }
 
 

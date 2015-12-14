@@ -2,14 +2,12 @@ package exam.ui;
 
 
 import exam.Exam;
-import exam.question.Question;
 import exam.question.QuestionPool;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
 
 /**
  * A window that takes a question pool file and lets
@@ -54,7 +52,7 @@ public class ExamWindow extends JFrame {
     public ExamWindow(QuestionPool questionPoolP) {
 
         questionPool = questionPoolP;
-        
+
         setTitle("Exam");
         setSize(WIDTH, HEIGHT);
 

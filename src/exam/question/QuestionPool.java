@@ -3,7 +3,6 @@ package exam.question;
 import exam.Exam;
 import exam.build.ParseQuestionPoolFile;
 
-import javax.xml.bind.ParseConversionEvent;
 import java.io.FileNotFoundException;
 import java.util.*;
 

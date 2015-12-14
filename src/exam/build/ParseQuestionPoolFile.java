@@ -1,7 +1,6 @@
 package exam.build;
 
 import exam.question.Question;
-import exam.question.QuestionPool;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

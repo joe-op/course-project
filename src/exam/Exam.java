@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Joe Opseth & Bel Sahn
  * Course Project CS235
- * 23 November 2015
+ * 13 December 2015
  *
  *
  * Exam class with QuestionPool
@@ -68,6 +68,7 @@ public class Exam {
         for(Question q : questions) {
             String[] answer = q.getAnswer().split("\n");
             str += String.format("%2d. %s%n", questionNo, answer[0]);
+            // Add spaces in front of additional lines
             for (int i = 1; i < answer.length; i++)
                 str += String.format("    %s%n", answer[i]);
             questionNo++;

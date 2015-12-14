@@ -61,6 +61,7 @@ public class QuestionPool {
     }
 
     // Return a randomized list of questions with a limit on the number of questions
+    // If there are not enough questions, return as many questions as possible
     private List<Question> cullShuffleRange(int min, int max, int noQuestions) {
         List<Question> range = shuffleRange(min, max);
         if(noQuestions <= range.size()) {

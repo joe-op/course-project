@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class ParseQuestionPoolFile {
 
-    public static List<Question> parseFile(String filename) throws FileNotFoundException {
+    public static List<Question> parseFile(String filename) throws FileNotFoundException, InvalidQuestionException {
         Scanner inFile = new Scanner(new FileReader(filename));
         List<Question> questions = new ArrayList<Question>();
         int lineNo = 0;
@@ -31,14 +31,17 @@ public class ParseQuestionPoolFile {
                 } else if (questionType.equals("long")) {
                     questions.add(ParseQuestions.parseLong(line));
                 } else {
-                    System.out.print(
-                            String.format("Invalid question type at line %d.%n%s%n",
+                    throw new InvalidQuestionException(
+                            String.format(
+                                "Invalid question type at line %d.%n%s",
                                     lineNo, line));
                 }
-            } catch(InvalidParameterException e) {
-                System.out.print(
-                        String.format("Invalid data at line %d.%n%s%n",
+            } catch(InvalidQuestionException e) {
+                throw new InvalidQuestionException(
+                        String.format(
+                                "Invalid data at line %d.%n%s",
                                 lineNo, line));
+
             }
         }
         return questions;

@@ -2,12 +2,14 @@ package exam.ui;
 
 
 import exam.Exam;
+import exam.question.Question;
 import exam.question.QuestionPool;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 
 /**
  * A window that takes a question pool file and lets
@@ -52,6 +54,11 @@ public class ExamWindow extends JFrame {
     public ExamWindow(QuestionPool questionPoolP) {
 
         questionPool = questionPoolP;
+        // TODO remove this
+        try {
+            questionPool.load("question-pool.txt");
+        } catch(FileNotFoundException e)
+        {}
 
         setTitle("Exam");
         setSize(WIDTH, HEIGHT);
@@ -74,8 +81,8 @@ public class ExamWindow extends JFrame {
         maxChapterTF.addActionListener(sbHandler);
 
         // toggle exam/key action
-        toggleExamKeyB = new JButton(CHECK_KEY_LABEL);
-        ToggleExamKeyButtonHandler tekbHandler = new ToggleExamKeyButtonHandler();
+        toggleExamKeyB = new JButton("Check Key");
+        ToggleKeyExamButtonHandler tekbHandler = new ToggleKeyExamButtonHandler();
         toggleExamKeyB.addActionListener(tekbHandler);
         toggleExamKeyB.setEnabled(false);
 
@@ -151,11 +158,11 @@ public class ExamWindow extends JFrame {
                 output.setText(e.getMessage());
                 toggleExamKeyB.setEnabled(false);
             }
+
         }
     }
 
-    // Change back and forth between displaying the exam and the key
-    private class ToggleExamKeyButtonHandler implements ActionListener {
+    private class ToggleKeyExamButtonHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent arg0) {
             if(toggleExamKeyB.getText().equals(CHECK_KEY_LABEL)) {
@@ -166,16 +173,16 @@ public class ExamWindow extends JFrame {
         }
     }
 
-    // Display the exam in the output window
     private void displayExam() {
+        int noQuestions = exam.getQuestions().size();
+        int points = exam.getPoints();
         output.setText(
                 String.format(
                         "Built exam with %d questions and %d points:%n%n%s",
-                        exam.getQuestions().size(), exam.getPoints(), exam.toString()));
+                        noQuestions, points, exam.toString()));
         output.setCaretPosition(0);
         toggleExamKeyB.setText(CHECK_KEY_LABEL);
     }
-    // Display the key in the output window
     private void displayKey() {
         output.setText(exam.keyToString());
         output.setCaretPosition(0);

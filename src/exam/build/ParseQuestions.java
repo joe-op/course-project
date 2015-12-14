@@ -24,7 +24,7 @@ public class ParseQuestions {
     private static String[] splitString(String str) { return str.split(String.valueOf(DELIMITER)); }
 
     // create MultipleChoiceQuestion from string
-    public static MultipleChoiceQuestion parseMultiple(String str) throws InvalidQuestionException {
+    public static MultipleChoiceQuestion parseMultiple(String str) {
         String[] strs = splitString(str);
         int points, chapter;
         String prompt;
@@ -40,13 +40,13 @@ public class ParseQuestions {
             for (int i = 0; i < numChoices; i++)
                 choices[i] = strs[i + 6];
         } catch(Exception e) {
-            throw new InvalidQuestionException(e.getMessage());
+            throw new InvalidParameterException(e.getMessage());
         }
         return new MultipleChoiceQuestion(points, chapter, prompt, choices, answer);
     }
 
     // create ShortAnswerQuestion from string
-    public static ShortAnswerQuestion parseShort(String str) throws InvalidQuestionException {
+    public static ShortAnswerQuestion parseShort(String str) {
         String[] strs = splitString(str);
         int points, chapter;
         String prompt;
@@ -60,13 +60,13 @@ public class ParseQuestions {
                 answers[i] = strs[i + 4];
             }
         } catch(Exception e) {
-            throw new InvalidQuestionException(e.getMessage());
+            throw new InvalidParameterException(e.getMessage());
         }
         return new ShortAnswerQuestion(points, chapter, prompt, answers);
     }
 
     // create LongAnswerQuestion from string
-    public static LongAnswerQuestion parseLong(String str) throws InvalidQuestionException {
+    public static LongAnswerQuestion parseLong(String str) {
         String[] strs = splitString(str);
         int points, chapter;
         String prompt, answer;
@@ -79,7 +79,7 @@ public class ParseQuestions {
             for (int i=5; i<strs.length; i++)
                 answer += "\n" + strs[i];
         } catch(Exception e) {
-            throw new InvalidQuestionException(e.getMessage());
+            throw new InvalidParameterException(e.getMessage());
         }
         return new LongAnswerQuestion(points, chapter, prompt, answer);
     }

@@ -1,0 +1,85 @@
+Design Report for Course Project
+Joe Opseth & Bel Sahn
+2015-10-12
+
+Classes:
+
+Question: A generic question.
+  Data members:
+	  String prompt: The text displayed to the student.
+		int points: The number of points the question is worth.
+    int chapter: The chapter the question is related to.
+  Methods:
+    String toString()
+      Returns the prompt.
+
+MultipleChoiceQuestion: A question with multiple answers.
+Inherits from Question.
+  Data members:
+    String[] choices: An array of possible answers
+		int answer: The correct answer
+  Methods:
+	  String toString()
+      Overrides Question toString() method.  Returns the prompt and choices
+    String answer()
+      Returns the letter and text of the correct answer.
+
+ShortAnswerQuestion: A question with a short answer.
+Inherits from Question.
+  Data members:
+	  String[] choices: An array of possible (correct) answers
+  Methods:
+	  String toString()
+		  Overrides Question toString() method.  Returns the prompt and two blank lines for an answer.
+	  String answer()
+      Returns the correct answers
+
+LongAnswerQuestion: A question with a long answer.
+Inherits from Question.
+  Data members:
+	  String answer: the correct answer
+  Methods:
+    String toString()
+      Overrides Question toString() method.  Returns the prompt and eight blank lines for an answer.
+    String answer()
+		  Returns the correct answer
+
+Exam: Contains questions and methods for building an exam with answer key.
+  Data members:
+    List<Question>: A List of Questions.
+    String exam: Current exam, if one has been built.
+    String key: Key corresponding to the current exam.
+    String courseName: The name of the course.
+		String professor: The name of the professor.
+  Methods:
+	  void load(String file)
+      Loads questions from file. Sorts by chapter and type.
+	  int size()
+      Returns the number of questions
+    void createExam(int minChapter, int maxChapter)
+      Creates an exam within the range of chapters and stores it in the exam instance variable.  Creates a corresponding key and stores it in the key instance variable.
+    void createExam(int minChapter, int maxChapter, boolean shuffle)
+		  Overloaded with option to shuffle the questions.
+	  void createExam(int minChapter, int maxChapter, int length)
+		  Overloaded with option to cap the number of questions.  Shuffles the questions.
+		void createExam(int minChapter, int maxChapter, int length, boolean shuffle)
+		  Overloaded so that, if for some reason you want to cap number of questions without shuffling, you can call with shuffle=false.
+	  void save(String dir)
+		  write this.exam to timestamped exam file and this.key to timestamped key file in dir.
+
+Nonmember functions:
+
+void main(): Interact with user to create exam from file and save to file.
+No parameters.				
+
+Pseudocode for main:
+  Ask user for a file with a list of questions.
+  Create an Exam object using the questions.
+	Display chapters and number of questions.
+  In while loop:
+	  Get chapters to use and number of questions to include from user.
+    Write exam and key to separate files.
+    Display point total to user.
+
+
+    

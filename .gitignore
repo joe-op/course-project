@@ -1,2 +1,6 @@
 exam.txt
 key.txt
+*.docx
+*.pdf
+*.class
+*.jar

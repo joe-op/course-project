@@ -58,6 +58,7 @@ public abstract class Question implements Comparable<Question> {
     }
 
 
+    /* Provides for sorting Questions by the chapter they are from */
     @Override @NotNull
     public int compareTo(Question o) {
         if (this.chapter < o.chapter)
